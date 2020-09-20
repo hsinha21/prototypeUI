@@ -12,6 +12,7 @@ import { HomeComponent } from './Components/home/home.component';
 import { AddTeamEstimationComponent } from './Components/add-team-estimation/add-team-estimation.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { MatCardModule } from '@angular/material/card';
 
 
 @NgModule({
@@ -23,10 +24,10 @@ import { HttpClientModule } from '@angular/common/http';
   ],
   imports: [
     BrowserModule, BrowserAnimationsModule, HttpClientModule, NgIdleKeepaliveModule.forRoot(),
-    AppRoutingModule,FormsModule, ReactiveFormsModule
+    AppRoutingModule, FormsModule, ReactiveFormsModule, MatCardModule
   ],
   exports: [
-    FormsModule, ReactiveFormsModule
+    FormsModule, ReactiveFormsModule, MatCardModule
   ],
   providers: [],
   bootstrap: [AppComponent]
