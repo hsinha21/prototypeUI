@@ -1,0 +1,136 @@
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+            <div class="card">
+                <div class="card-header card-header-primary">
+                    <h5 class="card-title">Add Core Team Estimation</h5>
+                </div>
+                <div class="card-body">
+                    <form [formGroup]="teamEstimationForm">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <label for="designation">Designation</label>
+                                <select class="custom-select" (change)="onDesignationChange($event.target.value)"
+                                    formControlName="designation">
+                                    <option disabled>Select a Designation</option>
+                                    <option *ngFor="let des of allDesignations" [value]=des.designationId>
+                                        {{des.designationName}}
+                                    </option>
+                                </select>
+                            </div>
+
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="rhpDesired">RPH (Desired)</label>
+                                    <div class="input-group">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text">$</span>
+                                        </div>
+                                        <input type="text" class="form-control" readonly formControlName="rhpDesired">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="resourceName">Resource Name</label>
+                                    <input type="text" class="form-control" required formControlName="resourceName">
+                                </div>
+                            </div>
+
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="rhpDiscounted">RPH (Discounted)</label>
+                                    <div class="input-group">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text">$</span>
+                                        </div>
+                                        <input type="number" class="form-control"
+                                            (change)="onRphDiscounted($event.target.value)" required
+                                            formControlName="rhpDiscounted">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="totalHours">Total Hours</label>
+                                    <div class="input-group">
+                                        <input type="number" class="form-control"
+                                            (change)="onTotalHours($event.target.value)" required
+                                            formControlName="totalHours">
+                                        <div class="input-group-append">
+                                            <span class="input-group-text">hrs</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="reqPeriod">REQ Period (in weeks)</label>
+                                    <div class="input-group">
+                                        <input type="number" class="form-control"
+                                            (change)="onReqPeriod($event.target.value)" required
+                                            formControlName="reqPeriod">
+                                        <div class="input-group-append">
+                                            <span class="input-group-text">week</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="avgHours">AVG Hours (per weeks)</label>
+                                    <div class="input-group">
+                                        <input type="text" class="form-control" readonly formControlName="avgHours">
+                                        <div class="input-group-append">
+                                            <span class="input-group-text">hrs/week</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="resourceCostDesired">Resource Cost (Desired)</label>
+                                    <div class="input-group">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text">$</span>
+                                        </div>
+                                        <input type="text" class="form-control" readonly
+                                            formControlName="resourceCostDesired">
+                                    </div>
+
+                                </div>
+                            </div>
+
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="resourceCostDiscounted">Resource Cost (Discounted)</label>
+                                    <div class="input-group">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text">$</span>
+                                        </div>
+                                        <input type="text" class="form-control" readonly
+                                            formControlName="resourceCostDiscounted">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-12">
+                                <button class="btn btn-secondary" (click)="cancel()">Cancel</button>
+                                <button class="pull-right btn btn-primary" [disabled]="teamEstimationForm.invalid"
+                                    (click)="submit()">Submit</button>
+                            </div>
+                        </div>
+
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

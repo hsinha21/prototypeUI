@@ -1,0 +1,67 @@
+<div class="header">
+    <img class="rounded-circle" [src]="currentUser.TJ">
+    <button class="btn btn-danger pull-right mt-4 mr-3" (click)="signout()">Sign out</button>
+    <h4 class="pull-right mt-4 mr-3">Hi, {{currentUser.Ad}} </h4>
+</div>
+
+<!-- <div class="container mt-3">
+    <div class="row">
+        <div class="col-md-12 col-12"> -->
+            <div class="card">
+                <div class="card-header card-header-primary">
+                    <h5 class="card-title mt-2">
+                        Historical Reporting
+                        <i class="fa fa-plus pull-right mr-2" style="cursor: pointer;" aria-hidden="true" [routerLink]="['/add-team-estimation']"></i>
+                    </h5>
+                </div>
+                <div class="card-body">
+                    
+                    <div class="table-responsive">
+                        <table class="table table-striped">
+                            <thead>
+                                <tr>
+                                    <th>Created By</th>
+                                    <th>Created On</th>
+                                    <th>Company Designation</th>
+                                    <th>Resource Name</th>
+                                    <th>RPH (Desired)</th>
+                                    <th>RPH (Discounted)</th>
+                                    <th>Total Hours</th>
+                                    <th>Req Period (in weeks)</th>
+                                    <!-- <th>Avg Hours (per weeks)</th>
+                                    <th>Resource Cost (Desired)</th>
+                                    <th>Resource Cost (Discounted)</th> -->
+                                    <th>Recommended Fee</th>
+                                    <th>Proposed Fee</th>
+                                    <th>ProposalCost (in USD)</th>
+                                    <th>ProposalCost (in AED)</th>
+
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr *ngFor="let item of allTeamEstimation">
+                                    <td>{{item.createdBy}}</td>
+                                    <td>{{item.createdDate | date: "MM/dd/yyyy HH:mm"}}</td>
+                                    <td>{{ item.designation}}</td>
+                                    <td>{{ item.resourceName }}</td>
+                                    <td>$ {{ item.rhpDesired | number}}</td>
+                                    <td>$ {{ item.rhpDiscounted | number}}</td>
+                                    <td>{{ item.totalHours }}</td>
+                                    <td>{{ item.reqPeriod }} weeks</td>
+                                    <!-- <td>{{ item.avgHours }} hrs/week</td>
+                                    <td>$ {{ item.resourceCostDesired }}</td>
+                                    <td>$ {{ item.resourceCostDiscounted }}</td> -->
+                                    <td>$ {{ item.resourceCostDesired | number}}</td>
+                                    <td>$ {{ (item.resourceCostDesired - item.resourceCostDiscounted) | number}}</td>
+                                    <td>$ {{ item.proposalCostUSD | number}}</td>
+                                    <td>{{ item.proposalCostAED | number}}</td>
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        <!-- </div>
+    </div>
+</div> -->
