@@ -5,8 +5,8 @@ import { HomeComponent } from './Components/home/home.component';
 import { LoginComponent } from './Components/login/login.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: 'login', pathMatch: 'full'},
-  { path: 'login', component: LoginComponent },
+  // { path: '', redirectTo: 'login', pathMatch: 'full'},
+  { path: '', component: LoginComponent },
   { path: 'home', component: HomeComponent },
   { path: 'add-team-estimation', component: AddTeamEstimationComponent}
 ];

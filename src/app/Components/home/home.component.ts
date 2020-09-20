@@ -46,7 +46,7 @@ export class HomeComponent implements OnInit {
 
     idle.onTimeout.subscribe(() => {
       this.timedOut = true;
-      this.router.navigate(['/login']);
+      this.router.navigate(['']);
       let auth2 = gapi.auth2.getAuthInstance();
       auth2.signOut().then(function () {
       });
@@ -108,7 +108,7 @@ export class HomeComponent implements OnInit {
   signout() {
     let auth2 = gapi.auth2.getAuthInstance();
     auth2.signOut().then( () => {
-      this.ngZone.run(() => this.router.navigate(['/login'])).then();
+      this.ngZone.run(() => this.router.navigate([''])).then();
 
     });
   }
