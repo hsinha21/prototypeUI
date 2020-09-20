@@ -6,7 +6,10 @@ import { Injectable } from '@angular/core';
 })
 export class CoreService {
 
-  url = 'http://localhost:3001/apis'
+  // url = 'http://localhost:3001/apis'
+
+  // For Ec2
+  url = "http://ec2-65-0-11-129.ap-south-1.compute.amazonaws.com:3001/apis"
 
   // currentUser;
 

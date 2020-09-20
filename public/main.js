@@ -861,7 +861,9 @@ __webpack_require__.r(__webpack_exports__);
 class CoreService {
     constructor(http) {
         this.http = http;
-        this.url = 'http://localhost:3001/apis';
+        // url = 'http://localhost:3001/apis'
+        // For Ec2
+        this.url = "http://ec2-65-0-11-129.ap-south-1.compute.amazonaws.com:3001/apis";
         // currentUser;
         this.currentUser = {
             $t: "bksinha213@gmail.com",
